@@ -64,8 +64,11 @@ conky.text = [[
 
   ${voffset -25}${offset 180}${font neuropol:size=20}${time %H:%M}${font}  ${font Nimbus Mono L:size=9}$uptime
   ${voffset 14}${offset 178}${color #ad1a26}${font Roboto-Italic:size=12}${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
+  ##Replace 'enp3s0' with name of your network interface
   ${offset 122}${voffset 75}${color #FFFFFF}${font Roboto-Medium:size=17}Dw  ${color #ad1a26}${downspeed enp3s0}
+  ##Replace 'enp3s0' with name of your network interface
   ${offset 118}${voffset 10}${color #FFFFFF}Up ${offset 10}${color #ad1a26}${upspeed enp3s0}
+  ##Replace 'enp3s0' with name of your network interface
   ${offset 120}${voffset 5}${font Roboto-Regularsize=12}${color #FFFFFF}TDown   ${color #00695c}${totaldown enp3s0}
   #${offset 90}${voffset 30}${font Roboto-Regularsize=12}${color #FFFFFF}Song:${offset 21}${color #af1616}${scroll 17 ${execi 2 ~/.conky/minimalism/cmus-conky}}
   ${offset 65}${voffset 135}${font Roboto-Regular:size=15}${color #FFFFFF}CPU
@@ -78,7 +81,7 @@ conky.text = [[
   ${offset 80} $mem / $memmax
   ${offset 165}${color #ad1a26}[$memperc%]
   ${offset 205}${voffset 2}${color #ffffff}${font Roboto-Bold:size=14}MEM
-  #CORRECT THIS PATH
+  ##CORRECT THIS PATH
   ${image ~/.conky/minimalism/Archlinux-icon.png -p 280,130 -s 110x110}
 
 ]];

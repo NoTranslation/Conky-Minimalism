@@ -11,4 +11,6 @@ A Simple Conky config
   2. Change the paths in minimalismRC & startup.sh
   3. Run startup.sh
   
-  
+Note: If Core temps are not displayed correctly, see line 264 in clocks.lua 
+
+![alt text](https://raw.githubusercontent.com/NoTranslation/Conky-Minimalism/master/example.png)

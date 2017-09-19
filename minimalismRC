@@ -20,6 +20,7 @@ conky.config = {
       own_window_argb_visual = true,
       own_window_argb_value = 0,
 	    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+      own_window_title = 'clicky',
 
 	    border_inner_margin = 50,
 	    border_outer_margin = 0,
@@ -58,6 +59,8 @@ conky.config = {
       --CORRECT THIS PATH
       lua_load = '~/.conky/minimalism/clocks.lua',
       lua_draw_hook_pre = 'clock_rings',
+      --lua_load = '~/.conky/minimalism/clicky.lua',
+      --lua_draw_hook_pre = 'main',
 };
 
 conky.text = [[
@@ -71,15 +74,15 @@ conky.text = [[
   ##Replace 'enp3s0' with name of your network interface
   ${offset 120}${voffset 5}${font Roboto-Regularsize=12}${color #FFFFFF}TDown   ${color #00695c}${totaldown enp3s0}
   #${offset 90}${voffset 30}${font Roboto-Regularsize=12}${color #FFFFFF}Song:${offset 21}${color #af1616}${scroll 17 ${execi 2 ~/.conky/minimalism/cmus-conky}}
-  ${offset 65}${voffset 135}${font Roboto-Regular:size=15}${color #FFFFFF}CPU
+  ${offset 68}${voffset 120}${font Roboto-Regular:size=15}${color #FFFFFF}CPU
   ${offset 188}${voffset 35}${font Roboto-Regular:size=8}Core 0
-  ${offset 234}${voffset -13}Core 1
-  ${offset 274}${voffset -13}Core 2
-  ${offset 314}${voffset -13}Core 3
+  ${offset 234}${voffset -15}Core 1
+  ${offset 274}${voffset -15}Core 2
+  ${offset 314}${voffset -15}Core 3
 
-  ${offset 90}${voffset 15}${font Roboto-Regular:size=11}${fs_used /} / ${fs_size /}
-  ${offset 80} $mem / $memmax
-  ${offset 165}${color #ad1a26}[$memperc%]
+  ${offset 100}${voffset 3}${font Roboto-Regular:size=11}${fs_used /} / ${fs_size /}
+  ${offset 90} $mem / $memmax
+  ${offset 175}${color #ad1a26}[$memperc%]
   ${offset 205}${voffset 2}${color #ffffff}${font Roboto-Bold:size=14}MEM
   ##CORRECT THIS PATH
   ${image ~/.conky/minimalism/Archlinux-icon.png -p 280,130 -s 110x110}

@@ -263,6 +263,12 @@ function DrawBars (cr,start_x,start_y,bar_width,bar_height,corenum,r,g,b)
   value = tonumber(conky_parse(string.format("${exec sensors | grep -o 'Core %s:        +[0-9].' | sed -r 's/%s:|[^0-9]//g'}",corenum,corenum)))
   -- IF TEMP BARS DO NOT SHOW, try commenting the line above with '--' and uncommenting the line below by removing '--'. (Thanks to /u/IAmAFedora)
   --value = tonumber(conky_parse(string.format("${exec sensors | grep -o 'Core %s:         +[0-9].' | sed -r 's/%s:|[^0-9]//g'}",corenum,corenum)))
+  -- OR THESE ONES (remove '--[[' and ']]':
+  --[[local handle = io.popen("sensors")
+  local cpuTemp = handle:read("*a")
+  value = tonumber(cpuTemp:match("CPU Temperature:%s+\+(%d+)"))
+  handle:close()
+  ]]
   max_value=100
   scale=bar_height/max_value
   indicator_height=scale*value
